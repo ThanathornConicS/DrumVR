@@ -34,12 +34,12 @@ public class VibrationManager : MonoBehaviour
     {
         if(stick.name == "Left Stick")
             {
-                Debug.Log("Left is Triggered");
+                //Debug.Log("Left is Triggered");
                 leftController.SendHapticImpulse(0.7f, 0.1f);
             }
             else
             {
-                Debug.Log("Right is Triggered");
+                //Debug.Log("Right is Triggered");
                 rightController.SendHapticImpulse(0.7f, 0.1f);
             }
     }
