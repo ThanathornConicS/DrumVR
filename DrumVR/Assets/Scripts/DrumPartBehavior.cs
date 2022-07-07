@@ -18,6 +18,7 @@ public class DrumPartBehavior : MonoBehaviour
         if(collider.gameObject.layer == LayerMask.NameToLayer("Stick"))
         {
             VibrationManager.Instance.TriggerVibration(m_audioSource.clip, collider.gameObject);
+            m_audioSource.pitch = Random.Range(0.9f, 1.1f);
             m_audioSource.Play();
         }
     }

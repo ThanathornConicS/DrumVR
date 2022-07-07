@@ -22,7 +22,7 @@ public class ControllerVelocity : MonoBehaviour
         Velocity = velocityProperty.action.ReadValue<Vector3>();
         velocityMagnitude = Velocity.magnitude;
 
-        Debug.Log("Magnitude: " + Velocity);
+        //Debug.Log("Magnitude: " + Velocity);
         velText.text = "Velocity" + Velocity + " with magnitude: " + velocityMagnitude;
     }
 }
