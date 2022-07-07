@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(AudioSource))]
 public class DrumPartBehavior : MonoBehaviour
 {
     AudioSource m_audioSource;
 
-    // Start is called before the first frame update
     void Start()
     {
         m_audioSource = GetComponent<AudioSource>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("Entered");
-        m_audioSource.Play();
+        if(collider.gameObject.layer == LayerMask.NameToLayer("Stick"))
+        {
+            VibrationManager.Instance.TriggerVibration(m_audioSource.clip, collider.gameObject);
+            m_audioSource.Play();
+        }
     }
 }
