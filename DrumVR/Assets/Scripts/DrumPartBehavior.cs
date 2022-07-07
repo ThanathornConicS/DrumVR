@@ -19,8 +19,8 @@ public class DrumPartBehavior : MonoBehaviour
     {
         if(collider.gameObject.layer == LayerMask.NameToLayer("Stick"))
         {
-            ControllerVelocity controllerVelocity = collider.gameObject.transform.parent.gameObject.GetComponent<ControllerVelocity>();
-            float angle = Vector3.Angle(Vector3.down, controllerVelocity.Velocity);
+            Rigidbody rb = collider.gameObject.GetComponent<Rigidbody>();
+            float angle = Vector3.Angle(Vector3.down, rb.velocity);
             
             if(angle < hitAngle){
                 VibrationManager.Instance.TriggerVibration(m_audioSource.clip, collider.gameObject);
