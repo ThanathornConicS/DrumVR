@@ -1744,7 +1744,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -2462762812082610725, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  velText: {fileID: 0}
+  velText: {fileID: 1793064266}
   velocityMagnitude: 0
 --- !u!1 &956632667
 GameObject:
@@ -1913,7 +1913,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1430555536}
         m_TargetAssemblyTypeName: TracksManager, Assembly-CSharp
-        m_MethodName: StopTrack
+        m_MethodName: PauseTrack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2339,6 +2339,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b33683f27a1ab6944a60ddaf320b17ba, type: 3}
   - {fileID: 8300000, guid: 67d9e58f8e8307d468b6f11689493bda, type: 3}
   currentTrack: 0
+  isPause: 0
   clipTitleText: {fileID: 1847895240}
   clipTimeText: {fileID: 0}
 --- !u!82 &1430555537
@@ -3164,7 +3165,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -1509745829582863061, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  velText: {fileID: 0}
+  velText: {fileID: 2048853347}
   velocityMagnitude: 0
 --- !u!1 &1673577508
 GameObject:

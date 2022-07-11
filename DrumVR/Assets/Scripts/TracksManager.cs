@@ -10,6 +10,8 @@ public class TracksManager : MonoBehaviour
 
     [SerializeField]
     private int currentTrack;
+     [SerializeField]
+    private bool isPause;
     private AudioSource source;
 
     public TMP_Text clipTitleText;
@@ -25,8 +27,13 @@ public class TracksManager : MonoBehaviour
     {
         source = GetComponent<AudioSource>();
         currentTrack = 0;
+        isPause = false;
 
-        PlayTrack();
+        source.clip = clips[currentTrack];
+
+        ShowCurrentTitle();
+
+        //PlayTrack();
     }
 
     public void PlayTrack()
@@ -43,11 +50,25 @@ public class TracksManager : MonoBehaviour
         }
         StartCoroutine("WaitForTrackEnd");
     }
+    public void PauseTrack()
+    {
+        isPause = !isPause;
+
+        if(isPause)
+        {
+            source.Pause();
+        }
+        else
+        {
+            source.Play();
+        }
+    }
     public void StopTrack()
     {
         StopCoroutine("WaitForTrackEnd");
         source.Stop();
     }
+    
 
     IEnumerator WaitForTrackEnd()
     {
@@ -82,11 +103,13 @@ public class TracksManager : MonoBehaviour
         currentTrack--;
         if(currentTrack < 0)
         {
-            currentTrack = 0;
+            currentTrack = clips.Length - 1;
         }
 
         source.clip = clips[currentTrack];
         source.Play();
+
+        ShowCurrentTitle();
 
         StartCoroutine("WaitForTrackEnd");
     }
