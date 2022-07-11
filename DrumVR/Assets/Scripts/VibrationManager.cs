@@ -32,12 +32,12 @@ public class VibrationManager : MonoBehaviour
     
     public void TriggerVibration(AudioClip clip, GameObject stick)
     {
-        if(stick.name == "Left Stick")
+        if(stick.name == "Left Sphere")
             {
                 //Debug.Log("Left is Triggered");
                 leftController.SendHapticImpulse(0.7f, 0.1f);
             }
-            else
+            else if(stick.name == "Right Sphere")
             {
                 //Debug.Log("Right is Triggered");
                 rightController.SendHapticImpulse(0.7f, 0.1f);

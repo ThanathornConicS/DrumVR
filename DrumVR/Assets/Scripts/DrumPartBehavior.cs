@@ -17,10 +17,10 @@ public class DrumPartBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.gameObject.layer == LayerMask.NameToLayer("Stick"))
+        if(collider.gameObject.layer == LayerMask.NameToLayer("Collider"))
         {
-            Rigidbody rb = collider.gameObject.GetComponent<Rigidbody>();
-            float angle = Vector3.Angle(Vector3.down, rb.velocity);
+            ObjectVelocity ov = collider.gameObject.GetComponent<ObjectVelocity>();
+            float angle = Vector3.Angle(Vector3.down, ov.Velocity);
             
             if(angle < hitAngle){
                 VibrationManager.Instance.TriggerVibration(m_audioSource.clip, collider.gameObject);
