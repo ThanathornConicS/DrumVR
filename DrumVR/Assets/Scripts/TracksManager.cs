@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using TMPro;
 
@@ -7,7 +8,13 @@ using TMPro;
 public class TracksManager : MonoBehaviour
 {
     [Header("Audio Clip")]
+    public string clipDirectory;
+    [SerializeField]
+    private List<string> filesInDir = new List<string>();
     public AudioClip[] clips;
+    public int position = 0;
+    public int samplerate = 44100;
+    public float frequency = 440;
 
     [Header("UI Elements")]
     public TMP_Text clipTitleText;
@@ -35,8 +42,28 @@ public class TracksManager : MonoBehaviour
         currentTrack = 0;
         isPause = false;
 
+        // Get all track from folder
+        string[] files;
+        files = Directory.GetFiles(clipDirectory);
+        for (int i = 0; i < files.Length; i++)
+        {
+            if (files[i].EndsWith(".mp3") || files[i].EndsWith(".flac"))
+            {
+                filesInDir.Add(files[i].Replace(clipDirectory, ""));
+            }
+        }
+
+        //Debug.Log("filesInDir Count: " + filesInDir.Count);
+        clips = new AudioClip[filesInDir.Count];
+        for (int i = 0; i < filesInDir.Count; i++)
+        {
+            clips[i] = AudioClip.Create(filesInDir[i], samplerate * 2, 1, samplerate, true, OnAudioRead);
+        }
+
+        // Set default track
         source.clip = clips[currentTrack];
 
+        // Set dropdown list
         dropdownList.options.Clear();
         for(int i = 0; i < clips.Length; i++)
         {
@@ -159,5 +186,16 @@ public class TracksManager : MonoBehaviour
     {
         clipTitleText.text = source.clip.name;
         fullLength = (int)source.clip.length;
+    }
+
+    private void OnAudioRead(float[] data)
+    {
+        int count = 0;
+        while (count < data.Length)
+        {
+            data[count] = Mathf.Sin(2 * Mathf.PI * frequency * position / samplerate);
+            position++;
+            count++;
+        }
     }
 }

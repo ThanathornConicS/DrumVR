@@ -2974,10 +2974,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50914845eff74874887980a1e81cacc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: 2bd9b3a5824053d4da87fb25710eada4, type: 3}
-  - {fileID: 8300000, guid: b33683f27a1ab6944a60ddaf320b17ba, type: 3}
-  - {fileID: 8300000, guid: 67d9e58f8e8307d468b6f11689493bda, type: 3}
+  clipDirectory: Assets\Audios\Backing Tracks\
+  filesInDir: []
+  clips: []
+  position: 0
+  samplerate: 44100
+  frequency: 440
   clipTitleText: {fileID: 2023184748}
   clipTimeText: {fileID: 0}
   dropdownList: {fileID: 1410878968}
