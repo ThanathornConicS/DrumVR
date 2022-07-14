@@ -41,7 +41,7 @@ public class HandUI : MonoBehaviour
         {
             isUIActive = true;
             handUI.SetActive(true);
-            interactor.SetActive(false);
+            interactor.SetActive(true);
             foreach (GameObject stick in sticks)
                 stick.SetActive(false);
         }
