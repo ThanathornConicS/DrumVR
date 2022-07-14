@@ -108,7 +108,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8bdf23af0e9c9cc42857d5b4d613df1a, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -206,4 +206,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95656101524720c4985ceaac877939fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: cb88e9c552cafc7489b425fdb8996f7e, type: 3}
+  - {fileID: 8300000, guid: 98763fb34fbc61440b302465bc9c4b33, type: 3}
+  - {fileID: 8300000, guid: 8bdf23af0e9c9cc42857d5b4d613df1a, type: 3}
+  - {fileID: 8300000, guid: c3c8a3cb9385c6a409c5b1998a8878f6, type: 3}
   hitAngle: 90
