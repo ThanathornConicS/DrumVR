@@ -24,7 +24,7 @@ public class DrumPartBehavior : MonoBehaviour
         if(collider.gameObject.layer == LayerMask.NameToLayer("Collider"))
         {
             ObjectVelocity ov = collider.gameObject.GetComponent<ObjectVelocity>();
-            Vector3 rigidbodyVel = rb.velocity;
+            Vector3 rigidbodyVel = ov.Velocity;
             float velMagnitude = rigidbodyVel.magnitude;
             float angle = Vector3.Angle(Vector3.down, rigidbodyVel);
             
