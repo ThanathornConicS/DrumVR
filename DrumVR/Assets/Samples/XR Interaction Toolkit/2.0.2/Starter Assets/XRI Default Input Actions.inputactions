@@ -1121,6 +1121,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Hand Control",
+            "id": "3acb5be9-5459-4068-a27a-95053b66dbda",
+            "actions": [
+                {
+                    "name": "Toggle UI",
+                    "type": "Button",
+                    "id": "cc66f67a-377d-4a8c-a0d3-520edb16d818",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3b4a0bc0-b811-455b-97a6-a401e3719f86",
+                    "path": "<XRController>{LeftHand}/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle UI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d4cb2232-65a8-4194-be5d-60c82fcece94",
+                    "path": "<XRController>{RightHand}/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle UI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
